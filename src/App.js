@@ -14,7 +14,6 @@ function App() {
       <Navbar />
       <Route path='/register' exact component={Register} />
       <Route path='/login' exact component={Login} />
-      <Route path='/createClass' exact component={CreateClass} />
       <Route path='/dashboard' exact component={Dashboard} />
     </Router>
   );

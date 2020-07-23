@@ -12,20 +12,18 @@ export default class CreateClass extends Component {
 
   render() {
     return (
-      <div class="uk-container uk-container-small uk-margin-medium">
-        <div class="uk-card uk-card-body uk-card-default">
-          <h1 className="header uk-text-light uk-card-title">Create New Class</h1>
+        <div>
           <form className="uk-form-horizontal">
-          <div className="uk-margin">
+          <div className="">
             <label className="uk-form-label">Class Name</label>
             <div className="uk-form-controls">
-              <input className="uk-input" id="form-horizontal-text" type="text" placeholder="Class Name" />
+              <input className="uk-input uk-form-width-medium" id="form-horizontal-text" type="text" placeholder="Class Name" />
             </div>
           </div>
           <div className="uk-margin">
             <label className="uk-form-label">Subject</label>
-            <div class="uk-form-controls">
-              <select class="uk-select" id="form-horizontal-select">
+            <div className="uk-form-controls">
+              <select className="uk-select uk-form-width-medium" id="form-horizontal-select">
                   <option>Option 01</option>
                   <option>Option 02</option>
               </select>
@@ -33,11 +31,10 @@ export default class CreateClass extends Component {
           </div>
           <div className="uk-margin">
             <div className="uk-form-controls">
-              <button class="uk-button uk-button-primary">Add Class</button>
+              <button className="uk-button uk-button-primary">Add Class</button>
             </div>
           </div>
         </form>
-        </div>
       </div>
     );
   }

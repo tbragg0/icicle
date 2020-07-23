@@ -4,9 +4,11 @@ import { DateTime } from 'luxon';
 export default class WeeklyCalendar extends Component {
   constructor(props) {
     super(props);
+    
     this.getCurrentWeek = this.getCurrentWeek.bind(this);
     this.formatWeek = this.formatWeek.bind(this);
     this.formatCurrentDate = this.formatCurrentDate.bind(this);
+
     this.state = {
       currentWeek: [],
       currentDate: "",

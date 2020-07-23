@@ -4,10 +4,39 @@ import microscope from './img/microscope.svg';
 import historyBook from './img/historyBook.svg';
 
 import WeeklyCalendar from "./weeklyCalendar.component";
+import CreateClass from "./createClass.component";
+
+class Plus extends Component {
+  render() {
+    return(
+      <a uk-icon="icon: plus" onClick={this.props.onClick}></a>
+    );
+  }
+}
+
+class Minus extends Component {
+  render() {
+    return(
+      <a uk-icon="icon: minus" onClick={this.props.onClick}></a>
+    );
+  }
+}
 
 export default class Dashboard extends Component {
   constructor(props) {
     super(props);
+
+    this.showCreateClass = this.showCreateClass.bind(this);
+
+    this.state = {
+      showCreateClassForm: false
+    }
+  }
+
+  showCreateClass() {
+    this.setState({
+      showCreateClassForm: this.state.showCreateClassForm ? false : true
+    });
   }
 
   render() {
@@ -15,7 +44,8 @@ export default class Dashboard extends Component {
       <div className="uk-container uk-background-default uk-margin-medium uk-padding">
         <h1 className="uk-heading-medium uk-text-light ">Dashboard</h1>
         <WeeklyCalendar />
-        <h2 className="uk-heading-small uk-text-light">Classes</h2>
+        <h2 className="uk-heading-small uk-text-light">Classes { this.state.showCreateClassForm ? <Minus onClick={this.showCreateClass} /> : <Plus onClick={this.showCreateClass} /> }</h2>
+        { this.state.showCreateClassForm ? <CreateClass /> : null }
         <p>Select a class to add assignments</p>
         <div className="uk-child-width-expand@s uk-grid">
           <div>
